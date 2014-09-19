@@ -54,7 +54,15 @@ public class SList {
 	 **/
 
 	public void insertFront(Object obj) {
-		head = new SListNode(obj, head);
+		SListNode b = new SListNode(obj);
+		// If the List is empty
+		if(head == null){
+			head = b;
+			tail = head;
+		} else{
+			b.next = head;
+			head = b;
+		}
 		size++;
 	}
 
